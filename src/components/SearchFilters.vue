@@ -15,7 +15,10 @@
         />
       </div>
       <button
-        class="inline-flex bg-gray-700 hover:bg-gray-600 focus:outline-none focus:shadow-outline rounded-lg shadow px-4"
+        type="button"
+        class="inline-flex bg-gray-700 hover:bg-gray-600 focus:outline-none focus:shadow-outline rounded-lg px-4"
+        @click="toggle"
+        :class="{ 'hover:bg-gray-600': isOpen }"
       >
         <svg
           class="h-6 w-6 fill-current text-gray-500"
@@ -29,12 +32,12 @@
         <span class="text-white ml-1 font-medium">Filters</span>
       </button>
     </div>
-    <div>
+    <form v-show="isOpen">
       <div class="px-4 py-4 border-t border-gray-900">
         <div class="flex">
           <label class="block w-1/2 pr-1">
             <span class="text-sm font-semibold text-gray-500">Bedroom</span>
-            <select class="mt-1 form-select block w-full shadow text-white">
+            <select class="mt-1 form-select block w-full shadow text-white focus:bg-gray-600">
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -43,7 +46,7 @@
           </label>
           <label class="block w-1/2 pl-1">
             <span class="text-sm font-semibold text-gray-500">Bathroom</span>
-            <select class="mt-1 form-select block w-full shadow text-white">
+            <select class="mt-1 form-select block w-full shadow text-white focus:bg-gray-600">
               <option>2</option>
             </select>
           </label>
@@ -51,7 +54,7 @@
         <div class="mt-4">
           <label>
             <span class="text-sm font-semibold text-gray-500">Price Range</span>
-            <select class="mt-1 form-select block w-full shadow text-white">
+            <select class="mt-1 form-select block w-full shadow text-white focus:bg-gray-600">
               <option>Up to $2,000/wk</option>
             </select>
           </label>
@@ -60,46 +63,61 @@
       <div class="px-4 py-4 border-t border-gray-900">
         <span class="block text-sm font-semibold text-gray-500">Property Type</span>
         <label class="mt-3 flex items-center">
-          <input class="form-radio" type="radio" name="propertyType" value="house" />
+          <input
+            class="form-radio focus:bg-gray-700"
+            type="radio"
+            name="propertyType"
+            value="house"
+          />
           <span class="ml-2 text-white">House</span>
         </label>
         <label class="mt-3 flex items-center">
-          <input class="form-radio" type="radio" name="propertyType" value="apartment" />
+          <input
+            class="form-radio focus:bg-gray-700"
+            type="radio"
+            name="propertyType"
+            value="apartment"
+          />
           <span class="ml-2 text-white">Apartment</span>
         </label>
         <label class="mt-3 flex items-center">
-          <input class="form-radio" type="radio" name="propertyType" value="loft" />
+          <input class="form-radio focus:bg-gray-700" type="radio" name="propertyType" value="loft" />
           <span class="ml-2 text-white">Loft</span>
         </label>
         <label class="mt-3 flex items-center">
-          <input class="form-radio" type="radio" name="propertyType" value="townhouse" />
+          <input
+            class="form-radio focus:bg-gray-700"
+            type="radio"
+            name="propertyType"
+            value="townhouse"
+          />
           <span class="ml-2 text-white">Townhouse</span>
         </label>
       </div>
       <div class="p-4 border-t border-gray-900">
-        <span class="block text-sm font-semibold text-gray-900">Amenities</span>
+        <span class="block text-sm font-semibold text-gray-500">Amenities</span>
         <label class="mt-3 flex items-center">
-          <input class="form-checkbox" type="checkbox" name="balcony" />
+          <input class="form-checkbox focus:bg-gray-700" type="checkbox" name="balcony" />
           <span class="ml-2 text-white">Balcony</span>
         </label>
         <label class="mt-3 flex items-center">
-          <input class="form-checkbox" type="checkbox" name="airConditioning" />
+          <input class="form-checkbox focus:bg-gray-700" type="checkbox" name="airConditioning" />
           <span class="ml-2 text-white">Air conditioning</span>
         </label>
         <label class="mt-3 flex items-center">
-          <input class="form-checkbox" type="checkbox" name="pool" />
+          <input class="form-checkbox focus:bg-gray-700" type="checkbox" name="pool" />
           <span class="ml-2 text-white">Pool</span>
         </label>
         <label class="mt-3 flex items-center">
-          <input class="form-checkbox" type="checkbox" name="beach" />
+          <input class="form-checkbox focus:bg-gray-700" type="checkbox" name="beach" />
           <span class="ml-2 text-white">Beach</span>
         </label>
         <label class="mt-3 flex items-center">
-          <input class="form-checkbox" type="checkbox" name="petFriendly" />
+          <input class="form-checkbox focus:bg-gray-700" type="checkbox" name="petFriendly" />
           <span class="ml-2 text-white">Pet friendly</span>
         </label>
         <label class="mt-3 flex items-center">
-          <input class="form-checkbox" type="checkbox" name="kidFriendly" />
+          <input class="form-checkbox focus:bg-gray-700" type="checkbox" name="kidFriendly" />
           <span class="ml-2 text-white">Kid friendly</span>
         </label>
         <label class="mt-3 flex items-center">
@@ -109,12 +127,25 @@
       </div>
       <div class="bg-gray-900 p-4">
         <!-- missing block class -->
-        <button class="w-full bg-indigo-500 hover:bg-indigo-400 font-semibold text-white px-4 py-2 rounded-lg">Update results</button>
+        <button
+          class="w-full bg-indigo-500 hover:bg-indigo-400 font-semibold text-white px-4 py-2 rounded-lg"
+        >Update results</button>
       </div>
-    </div>
+    </form>
   </section>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      isOpen: false
+    };
+  },
+  methods: {
+    toggle() {
+      this.isOpen = !this.isOpen;
+    }
+  }
+};
 </script>
