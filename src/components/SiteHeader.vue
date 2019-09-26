@@ -5,10 +5,18 @@
         <img class="h-8" src="img/logo-inverted.svg" alt="Workcation" />
       </div>
       <div class="flex">
-        <button @click="toggle" type="button" class="px-2 text-gray-500 hover:text-white focus:outline-none focus:text-white">
+        <button
+          @click="toggle"
+          type="button"
+          class="px-2 text-gray-500 hover:text-white focus:outline-none focus:text-white"
+        >
           <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
             <path
-              fill-rule="evenodd"
+              v-if="isOpen"
+              d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
+            />
+            <path
+              v-if="!isOpen"
               d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
             />
           </svg>
@@ -19,10 +27,10 @@
       <div class="px-2 pt-2 pb-5 border-b border-gray-600">
         <a
           href="#"
-          class="block px-3 py-1 font-semibold text-white hover:bg-gray-800"
+          class="block px-3 py-1 rounded font-semibold text-white hover:bg-gray-800"
         >List your property</a>
-        <a href="#" class="mt-1 block px-3 py-1 font-semibold text-white hover:bg-gray-800">Trips</a>
-        <a href="#" class="mt-1 block px-3 py-1 font-semibold text-white hover:bg-gray-800">Messages</a>
+        <a href="#" class="mt-1 block px-3 py-1 rounded font-semibold text-white hover:bg-gray-800">Trips</a>
+        <a href="#" class="mt-1 block px-3 py-1 rounded font-semibold text-white hover:bg-gray-800">Messages</a>
       </div>
       <div class="px-5 py-5">
         <div class="flex items-center">
@@ -45,15 +53,15 @@
 
 <script>
 export default {
-    data() {
-        return {
-            isOpen: false,
-        }
-    },
-    methods: {
-        toggle() {
-            this.isOpen = !this.isOpen
-        }
-    },
+  data() {
+    return {
+      isOpen: false
+    };
+  },
+  methods: {
+    toggle() {
+      this.isOpen = !this.isOpen;
+    }
+  }
 };
 </script>
