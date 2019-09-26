@@ -1,37 +1,120 @@
 <template>
-  <section class="flex justify-between bg-gray-800 px-4 py-3">
-    <div class="relative">
-      <div class="absolute inset-y-0 left-0 flex items-center pl-3">
-        <svg class="h-6 w-6 fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg">
+  <section class="bg-gray-800">
+    <div class="flex justify-between px-4 py-3">
+      <div class="relative">
+        <div class="absolute inset-y-0 left-0 flex items-center pl-3">
+          <svg class="h-6 w-6 fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M14.32 12.906l1.096 1.096c.412-.023.83.123 1.145.437l3 3a1.5 1.5 0 0 1-2.122 2.122l-3-3a1.497 1.497 0 0 1-.437-1.145l-1.096-1.096a8 8 0 1 1 1.414-1.414zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"
+            />
+          </svg>
+        </div>
+        <input
+          class="bg-gray-900 focus:outline-none focus:bg-white focus:text-gray-900 text-white rounded-lg pl-10 pr-4 py-2"
+          placeholder="Search by keywords"
+        />
+      </div>
+      <button
+        class="inline-flex bg-gray-700 hover:bg-gray-600 focus:outline-none focus:shadow-outline rounded-lg shadow px-4"
+      >
+        <svg
+          class="h-6 w-6 fill-current text-gray-500"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path
-            d="M14.32 12.906l1.096 1.096c.412-.023.83.123 1.145.437l3 3a1.5 1.5 0 0 1-2.122 2.122l-3-3a1.497 1.497 0 0 1-.437-1.145l-1.096-1.096a8 8 0 1 1 1.414-1.414zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"
+            d="M3 6a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm3 6a1 1 0 0 1 1-1h10a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1zm4 5a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2h-4z"
           />
         </svg>
-      </div>
-      <input
-        class="bg-gray-900 focus:outline-none focus:bg-white focus:text-gray-900 text-white rounded-lg pl-10 pr-4 py-2"
-        placeholder="Search by keywords"
-      />
+        <span class="text-white ml-1 font-medium">Filters</span>
+      </button>
     </div>
-    <button
-      class="inline-flex bg-gray-700 hover:bg-gray-600 focus:outline-none focus:shadow-outline rounded-lg shadow px-4"
-    >
-      <svg
-        class="h-6 w-6 fill-current text-gray-500"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M3 6a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm3 6a1 1 0 0 1 1-1h10a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1zm4 5a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2h-4z"
-        />
-      </svg>
-      <span class="text-white ml-1 font-medium">Filters</span>
-    </button>
+    <div>
+      <div class="px-4 py-4 border-t border-gray-900">
+        <div class="flex">
+          <label class="block w-1/2 pr-1">
+            <span class="text-sm font-semibold text-gray-500">Bedroom</span>
+            <select class="mt-1 form-select block w-full shadow text-white">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+          </label>
+          <label class="block w-1/2 pl-1">
+            <span class="text-sm font-semibold text-gray-500">Bathroom</span>
+            <select class="mt-1 form-select block w-full shadow text-white">
+              <option>2</option>
+            </select>
+          </label>
+        </div>
+        <div class="mt-4">
+          <label>
+            <span class="text-sm font-semibold text-gray-500">Price Range</span>
+            <select class="mt-1 form-select block w-full shadow text-white">
+              <option>Up to $2,000/wk</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="px-4 py-4 border-t border-gray-900">
+        <span class="block text-sm font-semibold text-gray-500">Property Type</span>
+        <label class="mt-3 flex items-center">
+          <input class="form-radio" type="radio" name="propertyType" value="house" />
+          <span class="ml-2 text-white">House</span>
+        </label>
+        <label class="mt-3 flex items-center">
+          <input class="form-radio" type="radio" name="propertyType" value="apartment" />
+          <span class="ml-2 text-white">Apartment</span>
+        </label>
+        <label class="mt-3 flex items-center">
+          <input class="form-radio" type="radio" name="propertyType" value="loft" />
+          <span class="ml-2 text-white">Loft</span>
+        </label>
+        <label class="mt-3 flex items-center">
+          <input class="form-radio" type="radio" name="propertyType" value="townhouse" />
+          <span class="ml-2 text-white">Townhouse</span>
+        </label>
+      </div>
+      <div class="p-4 border-t border-gray-900">
+        <span class="block text-sm font-semibold text-gray-900">Amenities</span>
+        <label class="mt-3 flex items-center">
+          <input class="form-checkbox" type="checkbox" name="balcony" />
+          <span class="ml-2 text-white">Balcony</span>
+        </label>
+        <label class="mt-3 flex items-center">
+          <input class="form-checkbox" type="checkbox" name="airConditioning" />
+          <span class="ml-2 text-white">Air conditioning</span>
+        </label>
+        <label class="mt-3 flex items-center">
+          <input class="form-checkbox" type="checkbox" name="pool" />
+          <span class="ml-2 text-white">Pool</span>
+        </label>
+        <label class="mt-3 flex items-center">
+          <input class="form-checkbox" type="checkbox" name="beach" />
+          <span class="ml-2 text-white">Beach</span>
+        </label>
+        <label class="mt-3 flex items-center">
+          <input class="form-checkbox" type="checkbox" name="petFriendly" />
+          <span class="ml-2 text-white">Pet friendly</span>
+        </label>
+        <label class="mt-3 flex items-center">
+          <input class="form-checkbox" type="checkbox" name="kidFriendly" />
+          <span class="ml-2 text-white">Kid friendly</span>
+        </label>
+        <label class="mt-3 flex items-center">
+          <input class="form-checkbox" type="checkbox" name="parking" />
+          <span class="ml-2 text-white">Parking</span>
+        </label>
+      </div>
+      <div class="bg-gray-900 p-4">
+        <!-- missing block class -->
+        <button class="w-full bg-indigo-500 hover:bg-indigo-400 font-semibold text-white px-4 py-2 rounded-lg">Update results</button>
+      </div>
+    </div>
   </section>
 </template>
 
 <script>
-export default {
-    
-}
+export default {};
 </script>
