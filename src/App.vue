@@ -1,20 +1,6 @@
 <template>
   <div id="app" class="min-h-screen bg-gray-200 antialiased">
-    <header class="flex justify-between bg-gray-900 px-4 py-3">
-      <div>
-        <img class="h-8" src="img/logo-inverted.svg" alt="Workcation" />
-      </div>
-      <div class="flex">
-        <button>
-          <svg class="w-6 h-6 fill-current text-gray-500" viewBox="0 0 24 24">
-            <path
-              fill-rule="evenodd"
-              d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-            />
-          </svg>
-        </button>
-      </div>
-    </header>
+    <SiteHeader />
     <section class="flex justify-between bg-gray-800 px-4 py-3">
       <div class="relative">
         <div class="absolute inset-y-0 left-0 flex items-center pl-3">
@@ -107,8 +93,11 @@
 </template>
 
 <script>
+import SiteHeader from '@/components/SiteHeader'
 export default {
   name: "app",
-  components: {}
+  components: {
+    SiteHeader
+  }
 };
 </script>
