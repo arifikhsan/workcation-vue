@@ -1,6 +1,6 @@
 <template>
-  <section class="bg-gray-800">
-    <div class="flex justify-between px-4 py-3">
+  <section class="bg-gray-800 xl:w-72">
+    <div class="flex justify-between px-4 py-3 xl:hidden">
       <div class="relative sm:w-full sm:max-w-xs mr-4">
         <div class="absolute inset-y-0 left-0 flex items-center pl-3">
           <svg class="h-6 w-6 fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg">
@@ -32,9 +32,9 @@
         <span class="text-white ml-1 font-medium">Filters</span>
       </button>
     </div>
-    <form v-show="isOpen">
-      <div class="lg:flex">
-        <div class="flex flex-wrap px-4 py-4 border-t border-gray-900 lg:w-1/3">
+    <form v-show="isOpen" class="xl:h-full xl:flex xl:flex-col xl:justify-between">
+      <div class="lg:flex xl:block xl:overflow-y-auto">
+        <div class="flex flex-wrap px-4 py-4 border-t border-gray-900 lg:w-1/3 xl:border-t-0 xl:w-full">
           <label class="w-1/2 px-2 sm:w-1/4 lg:w-1/2">
             <span class="text-sm font-semibold text-gray-500">Bedroom</span>
             <select class="mt-1 form-select block w-full shadow text-white focus:bg-gray-600">
@@ -59,7 +59,7 @@
             </label>
           </div>
         </div>
-        <div class="px-4 py-4 border-t border-gray-900 lg:w-1/3 lg:border-l">
+        <div class="px-4 py-4 border-t border-gray-900 lg:w-1/3 lg:border-l xl:w-full xl:border-l-0">
           <span class="block text-sm font-semibold text-gray-500">Property Type</span>
           <div class="sm:flex lg:block">
             <label class="mt-3 flex items-center sm:w-1/4 sm:px-2 lg:w-full lg:px-0">
@@ -100,30 +100,30 @@
             </label>
           </div>
         </div>
-        <div class="p-4 border-t border-gray-900 lg:w-1/3 lg:border-l">
+        <div class="p-4 border-t border-gray-900 lg:w-1/3 lg:border-l xl:w-full xl:border-l-0">
           <span class="block text-sm font-semibold text-gray-500">Amenities</span>
           <div class="sm:flex sm:flex-wrap">
-            <label class="mt-3 flex items-center sm:w-1/4 sm:px-2 lg:w-1/2">
+            <label class="mt-3 flex items-center sm:w-1/4 sm:px-2 lg:w-1/2 xl:w-full">
               <input class="form-checkbox focus:bg-gray-700" type="checkbox" name="balcony" />
               <span class="ml-2 text-white">Balcony</span>
             </label>
-            <label class="mt-3 flex items-center sm:w-1/4 sm:px-2 lg:w-1/2">
+            <label class="mt-3 flex items-center sm:w-1/4 sm:px-2 lg:w-1/2 xl:w-full">
               <input class="form-checkbox focus:bg-gray-700" type="checkbox" name="pool" />
               <span class="ml-2 text-white">Pool</span>
             </label>
-            <label class="mt-3 flex items-center sm:w-1/4 sm:px-2 lg:w-1/2">
+            <label class="mt-3 flex items-center sm:w-1/4 sm:px-2 lg:w-1/2 xl:w-full">
               <input class="form-checkbox focus:bg-gray-700" type="checkbox" name="beach" />
               <span class="ml-2 text-white">Beach</span>
             </label>
-            <label class="mt-3 flex items-center sm:w-1/4 sm:px-2 lg:w-1/2">
+            <label class="mt-3 flex items-center sm:w-1/4 sm:px-2 lg:w-1/2 xl:w-full">
               <input class="form-checkbox focus:bg-gray-700" type="checkbox" name="petFriendly" />
               <span class="ml-2 text-white">Pet friendly</span>
             </label>
-            <label class="mt-3 flex items-center sm:w-1/4 sm:px-2 lg:w-1/2">
+            <label class="mt-3 flex items-center sm:w-1/4 sm:px-2 lg:w-1/2 xl:w-full">
               <input class="form-checkbox focus:bg-gray-700" type="checkbox" name="kidFriendly" />
               <span class="ml-2 text-white">Kid friendly</span>
             </label>
-            <label class="mt-3 flex items-center sm:w-1/4 sm:px-2 lg:w-1/2">
+            <label class="mt-3 flex items-center sm:w-1/4 sm:px-2 lg:w-1/2 xl:w-full">
               <input class="form-checkbox" type="checkbox" name="parking" />
               <span class="ml-2 text-white">Parking</span>
             </label>
@@ -136,7 +136,7 @@
       </div>
       <div class="bg-gray-900 p-4">
         <button
-          class="w-full sm:w-auto sm:inline-block bg-indigo-500 hover:bg-indigo-400 font-semibold text-white px-4 py-2 rounded-lg"
+          class="w-full sm:w-auto sm:inline-block bg-indigo-500 hover:bg-indigo-400 font-semibold text-white px-4 py-2 rounded-lg xl:w-full"
         >Update results</button>
       </div>
     </form>
