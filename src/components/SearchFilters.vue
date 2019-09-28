@@ -33,28 +33,26 @@
       </button>
     </div>
     <form v-show="isOpen">
-      <div class="px-4 py-4 border-t border-gray-900 sm:flex">
-        <div class="flex sm:w-1/2">
-          <label class="block w-1/2 px-1">
-            <span class="text-sm font-semibold text-gray-500">Bedroom</span>
-            <select class="mt-1 form-select block w-full shadow text-white focus:bg-gray-600">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-            </select>
-          </label>
-          <label class="block w-1/2 px-1">
-            <span class="text-sm font-semibold text-gray-500">Bathroom</span>
-            <select class="mt-1 form-select block w-full shadow text-white focus:bg-gray-600">
-              <option>2</option>
-            </select>
-          </label>
-        </div>
-        <div class="mt-4 sm:mt-0 sm:w-1/2 sm:ml-2">
+      <div class="flex flex-wrap px-4 py-4 border-t border-gray-900">
+        <label class="w-1/2 px-2 sm:w-1/4">
+          <span class="text-sm font-semibold text-gray-500">Bedroom</span>
+          <select class="mt-1 form-select block w-full shadow text-white focus:bg-gray-600">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+        </label>
+        <label class="w-1/2 px-2 sm:w-1/4">
+          <span class="text-sm font-semibold text-gray-500">Bathroom</span>
+          <select class="mt-1 form-select block w-full shadow text-white focus:bg-gray-600">
+            <option>2</option>
+          </select>
+        </label>
+        <div class="mt-4 w-full px-2 sm:mt-0 sm:w-1/2">
           <label>
             <span class="text-sm font-semibold text-gray-500">Price Range</span>
-            <select class="mt-1 form-select block w-full shadow text-white focus:bg-gray-600">
+            <select class="mt-1 form-select w-full shadow text-white focus:bg-gray-600">
               <option>Up to $2,000/wk</option>
             </select>
           </label>
