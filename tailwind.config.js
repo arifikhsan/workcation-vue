@@ -1,14 +1,18 @@
 module.exports = {
   theme: {
-    extend: {},
+    extend: {
+      spacing: {
+        '80': '20rem'
+      },
+      padding: {
+        '5/6': '83.3333333%'
+      }
+    },
     customForms: theme => ({
-      // borderColor: 'transparent',
-      // backgroundColor: theme('colors.gray.700'),
       default: {
         input: {},
         select: {
           borderRadius: theme('borderRadius.lg'),
-          // boxShadow: theme('boxShadow.default')
           backgroundColor: theme('colors.gray.700'),
           borderColor: 'transparent',
           iconColor: theme('colors.white'),
