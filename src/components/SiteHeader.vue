@@ -27,7 +27,7 @@
       class="sm:flex sm:items-center sm:px-4 xl:flex-1 xl:justify-between"
       :class="{ 'hidden': !isOpen, 'block': isOpen }"
     >
-      <div class="hidden xl:block xl:relative sm:w-full sm:max-w-xs xl:mr-4 ">
+      <div class="hidden xl:block xl:relative sm:w-full sm:max-w-xs xl:mr-4">
         <div class="absolute inset-y-0 left-0 flex items-center pl-3">
           <svg class="h-6 w-6 fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -46,31 +46,51 @@
         >
           <a
             href="#"
-            class="block px-3 py-1 rounded font-semibold text-white hover:bg-gray-800 xl:text-gray-900"
+            class="block px-3 py-1 rounded font-semibold text-white hover:bg-gray-800 xl:text-gray-900 xl:hover:bg-gray-200"
           >List your property</a>
           <a
             href="#"
-            class="mt-1 block px-3 py-1 rounded font-semibold text-white hover:bg-gray-800 sm:mt-0 sm:text-sm sm:px-2 sm:ml-2 xl:text-gray-900"
+            class="mt-1 block px-3 py-1 rounded font-semibold text-white hover:bg-gray-800 sm:mt-0 sm:text-sm sm:px-2 sm:ml-2 xl:text-gray-900 xl:hover:bg-gray-200"
           >Trips</a>
           <a
             href="#"
-            class="mt-1 block px-3 py-1 rounded font-semibold text-white hover:bg-gray-800 sm:mt-0 sm:text-sm sm:px-2 sm:ml-2 xl:text-gray-900"
+            class="mt-1 block px-3 py-1 rounded font-semibold text-white hover:bg-gray-800 sm:mt-0 sm:text-sm sm:px-2 sm:ml-2 xl:text-gray-900 xl:hover:bg-gray-200"
           >Messages</a>
         </div>
-        <div class="px-5 py-5 sm:py-0 sm:px-0 sm:ml-4">
-          <div class="flex items-center">
+        <div class="relative px-5 py-5 sm:py-0 sm:px-0 sm:ml-4">
+          <div class="flex items-center sm:hidden">
             <img
-              class="h-10 w-10 object-cover rounded-full border-2 border-gray-600 sm:w-8 sm:h-8 xl:border-gray-300"
+              class="h-10 w-10 object-cover rounded-full border-2 border-gray-600"
               src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80"
-              alt
             />
             <span class="ml-4 font-semibold text-gray-200 sm:hidden">Isla Schoger</span>
           </div>
-          <div class="mt-5 sm:hidden">
-            <a href="#" class="block text-gray-400 hover:text-white">Account settings</a>
-            <a href="#" class="mt-3 block text-gray-400 hover:text-white">Support</a>
-            <a href="#" class="mt-3 block text-gray-400 hover:text-white">Sign out</a>
-          </div>
+          <Dropdown>
+            <template #trigger>
+              <img
+                class="h-8 w-8 object-cover rounded-full border-2 border-gray-600 sm:focus:border-white xl:border-gray-300"
+                src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80"
+              />
+            </template>
+            <template #dropdown>
+              <div
+                class="mt-5 sm:bg-white sm:rounded-lg sm:absolute sm:right-0 sm:w-48 sm:mt-3 sm:shadow-xl sm:py-2"
+              >
+                <a
+                  href="#account"
+                  class="block text-gray-400 hover:text-white sm:text-gray-800 sm:px-4 sm:py-2 sm:hover:bg-indigo-500"
+                >Account settings</a>
+                <a
+                  href="#support"
+                  class="mt-3 block text-gray-400 hover:text-white sm:text-gray-800 sm:px-4 sm:py-2 sm:mt-0 sm:hover:bg-indigo-500"
+                >Support</a>
+                <a
+                  href="#signup"
+                  class="mt-3 block text-gray-400 hover:text-white sm:text-gray-800 sm:px-4 sm:py-2 sm:mt-0 sm:hover:bg-indigo-500"
+                >Sign out</a>
+              </div>
+            </template>
+          </Dropdown>
         </div>
       </div>
     </nav>
@@ -78,10 +98,16 @@
 </template>
 
 <script>
+import Dropdown from "@/components/Dropdown";
 export default {
+  components: {
+    Dropdown
+  },
+  props: [],
   data() {
     return {
-      isOpen: false
+      isOpen: false,
+      dropdownOpen: false
     };
   },
   methods: {
